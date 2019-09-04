@@ -2,9 +2,7 @@
     "greeting": {
         "text": "Hello  ",
         "end":  "I'm Friendbot",
-        "description": "I want you to know that everything we talk about is private and totally secure, so you can trust me. We will not tell anyone that you are talking to me or the things we talk about.
-        Every day I will be talking to you to know how you feel, how your life is and to help you in whatever I can.
-        And it is also important that you know that I am not a child, I am a bot that can help you."
+        "description": "I want you to know that everything we talk about is private and totally secure, so you can trust me. We will not tell anyone that you are talking to me or the things we talk about.\nEvery day I will be talking to you to know how you feel, how your life is and to help you in whatever I can.\nAnd it is also important that you know that I am not a child, I am a bot that can help you."
     },
     "products":  {
         "text" : "Here's what I can do for you!",

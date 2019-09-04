@@ -4,10 +4,12 @@ import requests
 import os
 from . import bot
 from .utilities import find_user, make_response
-
+""" 
 PAT = os.environ.get('PAT', None)
-verify_token = os.environ.get('VERIFY_TOKEN', None)
+verify_token = os.environ.get('VERIFY_TOKEN', None) """
 
+PAT = 'EAAGAMfOUVjABANREHkyFZBhak5w0DjjYyymuL0JZB9qE4mEd5nZA0DYC7P5SYO76NtgtLivZBIXHJUSTWxTele5lEGZCXXg7ZB5FgZANjLXDPhKblDN7yjvq7rMB26ylLosrz96QLkH8DyEypZC0ekyj9x3SEgrqvYGQyNjmLYl1dgZDZD'
+verify_token = '0454'
 
 @bot.route('/', methods = ['GET'])
 def worker_verification():
@@ -43,32 +45,8 @@ def worker_messaging():
                             received = msg["message"]
                             if received.get("quick_reply"):
                                 option = received["quick_reply"]["payload"]
-                                if option.lower() == 'start-sh':
-                                    make_response(sender_id, 'quick', 'start_shopping', PAT)
-                                elif option.lower() == 'yes_cr':
-                                    pass
-                                elif option.lower() == 'already_p':
-                                    make_response(sender_id, 'message', 'have', PAT)
-                                elif option.low() == 'location':
-                                    make_response(sender_id, 'number', 'number', PAT)
-                                elif option[0] == "+":
-                                    make_response(sender_id, 'quick', 'start_post', PAT)
-                                elif option.lower() == 'yes':
-                                    make_response(sender_id, 'message', 'pictures', PAT)
                             elif received.get('text'):
                                 option = received["text"]
-
-                                page = validate_url(option)
-                                if page:
-                                    page_id = get_page_id(page)
-                                    if page_id:
-                                        make_response(sender_id, 'message', 'valid_page', PAT)
-                                        make_response(sender_id, 'message', 'start_man', PAT)
-                                    else:
-                                        make_response(sender_id, 'message', 'invalid_page', PAT)
-                                else:
-                                    if option.lower() == 'shoes':
-                                        make_response(sender_id, 'location', 'location', PAT)
                             elif received.get('attachments'):
                                 imgs = received['attachments']
                                 for img in imgs:
