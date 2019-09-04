@@ -73,7 +73,7 @@ def make_response(_id, t, k, token, **kwargs):
         api_request = getattr(_CURRENT_MODULE_, req)
         if t == 'message':
             if k == 'greeting':
-                msg = loaded.get('text', None) + find_user(_id, token) + loaded.get('end', None) '!'
+                msg = loaded.get('text', None) + find_user(_id, token) + loaded.get('end', None) + '!'
                 logger.info(message)
                 api_request(_id, msg, token)
                 api_request(_id, loaded["description"], token)
